@@ -1,14 +1,14 @@
-#ifndef STARCONTOUR_H
-#define STARCONTOUR_H
+#ifndef CIRCLEFRAME_H
+#define CIRCLEFRAME_H
 
 #include <GL/glew.h>
 
 #include "program.h"
 
-class StarContour{
+class CircleFrame{
  public:
     void Initialize();
-    ~StarContour();
+    ~CircleFrame();
     void Draw(const Program & program);
  private:
     GLuint vao_;
@@ -16,4 +16,4 @@ class StarContour{
     GLuint color_buffer_;
 };
 
-#endif // STARCONTOUR_H
+#endif // CIRCLEFRAME_H

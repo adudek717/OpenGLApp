@@ -1,53 +1,51 @@
-#include "circle.h"
+#include "circleFrame.h"
 #include <math.h>
 
 #include <GL/glew.h>
 
-void Circle::Initialize(){
+void CircleFrame::Initialize(){
     
     const GLfloat kVertices[] = {
-         0.00f,  0.00f, 0.0f, 1.0f,
-         0.80f,  0.00f, 0.0f, 1.0f,
+         0.70f,  0.00f, 0.0f, 1.0f,
 
-         0.78f,  0.15f, 0.0f, 1.0f,
-         0.73f,  0.30f, 0.0f, 1.0f,
-         0.66f,  0.44f, 0.0f, 1.0f,
-         0.56f,  0.56f, 0.0f, 1.0f,
-         0.44f,  0.66f, 0.0f, 1.0f,
-         0.30f,  0.73f, 0.0f, 1.0f,
-         0.15f,  0.78f, 0.0f, 1.0f,
-         0.00f,  0.80f, 0.0f, 1.0f, // 8
+         0.68f,  0.13f, 0.0f, 1.0f,
+         0.64f,  0.26f, 0.0f, 1.0f,
+         0.58f,  0.38f, 0.0f, 1.0f,
+         0.49f,  0.49f, 0.0f, 1.0f,
+         0.38f,  0.58f, 0.0f, 1.0f,
+         0.26f,  0.64f, 0.0f, 1.0f,
+         0.13f,  0.68f, 0.0f, 1.0f,
+         0.00f,  0.70f, 0.0f, 1.0f, // 8
 
-        -0.15f,  0.78f, 0.0f, 1.0f,
-        -0.30f,  0.73f, 0.0f, 1.0f,
-        -0.44f,  0.66f, 0.0f, 1.0f,
-        -0.56f,  0.56f, 0.0f, 1.0f,
-        -0.66f,  0.44f, 0.0f, 1.0f,
-        -0.73f,  0.30f, 0.0f, 1.0f,
-        -0.78f,  0.15f, 0.0f, 1.0f,
-        -0.80f,  0.00f, 0.0f, 1.0f, // 16
+        -0.13f,  0.68f, 0.0f, 1.0f,
+        -0.26f,  0.64f, 0.0f, 1.0f,
+        -0.38f,  0.58f, 0.0f, 1.0f,
+        -0.49f,  0.49f, 0.0f, 1.0f,
+        -0.58f,  0.38f, 0.0f, 1.0f,
+        -0.64f,  0.26f, 0.0f, 1.0f,
+        -0.68f,  0.13f, 0.0f, 1.0f,
+        -0.70f,  0.00f, 0.0f, 1.0f, // 16
 
-        -0.78f, -0.15f, 0.0f, 1.0f,
-        -0.73f, -0.30f, 0.0f, 1.0f,
-        -0.66f, -0.44f, 0.0f, 1.0f,
-        -0.56f, -0.56f, 0.0f, 1.0f,
-        -0.44f, -0.66f, 0.0f, 1.0f,
-        -0.30f, -0.73f, 0.0f, 1.0f,
-        -0.15f, -0.78f, 0.0f, 1.0f,
-        -0.00f, -0.80f, 0.0f, 1.0f, // 24
+        -0.68f, -0.13f, 0.0f, 1.0f,
+        -0.64f, -0.26f, 0.0f, 1.0f,
+        -0.58f, -0.38f, 0.0f, 1.0f,
+        -0.49f, -0.49f, 0.0f, 1.0f,
+        -0.38f, -0.58f, 0.0f, 1.0f,
+        -0.26f, -0.64f, 0.0f, 1.0f,
+        -0.13f, -0.68f, 0.0f, 1.0f,
+        -0.00f, -0.70f, 0.0f, 1.0f, // 24
 
-         0.15f, -0.78f, 0.0f, 1.0f,
-         0.30f, -0.73f, 0.0f, 1.0f,
-         0.44f, -0.66f, 0.0f, 1.0f,
-         0.56f, -0.56f, 0.0f, 1.0f,
-         0.66f, -0.44f, 0.0f, 1.0f,
-         0.73f, -0.30f, 0.0f, 1.0f,
-         0.78f, -0.15f, 0.0f, 1.0f,
-         0.80f, -0.00f, 0.0f, 1.0f  // 32  
+         0.13f, -0.68f, 0.0f, 1.0f,
+         0.26f, -0.64f, 0.0f, 1.0f,
+         0.38f, -0.58f, 0.0f, 1.0f,
+         0.49f, -0.49f, 0.0f, 1.0f,
+         0.58f, -0.38f, 0.0f, 1.0f,
+         0.64f, -0.26f, 0.0f, 1.0f,
+         0.68f, -0.13f, 0.0f, 1.0f,
+         0.70f, -0.00f, 0.0f, 1.0f  // 32
     };
 
     const GLfloat kColors[] = {
-        0.0f, 1.0f, 0.0f, 1.0f,
         0.0f, 1.0f, 0.0f, 1.0f,
 
         0.0f, 1.0f, 0.0f, 1.0f,
@@ -107,7 +105,7 @@ void Circle::Initialize(){
     glBindVertexArray(0);
 }
 
-Circle::~Circle(){
+CircleFrame::~CircleFrame(){
     glDisableVertexAttribArray(1);
     glDisableVertexAttribArray(0);
 
@@ -120,12 +118,12 @@ Circle::~Circle(){
     glDeleteVertexArrays(1, &vao_);
 }
 
-void Circle::Draw(const Program &program){
+void CircleFrame::Draw(const Program &program){
 
     glUseProgram(program);
     glBindVertexArray(vao_);
 
-    glDrawArrays(GL_TRIANGLE_FAN, 0, 34);
+    glDrawArrays(GL_LINE_LOOP, 0, 33);
 
     glBindVertexArray(0);
     glUseProgram(0);

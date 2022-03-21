@@ -1,8 +1,8 @@
-#include "starContour.h"
+#include "starFrame.h"
 
 #include <GL/glew.h>
 
-void StarContour::Initialize(){
+void StarFrame::Initialize(){
     const GLfloat kVertices[] = {
         -0.3f, -0.2f, 0.0f, 1.0f,
         -0.7f,  0.2f, 0.0f, 1.0f,
@@ -18,17 +18,17 @@ void StarContour::Initialize(){
     };
 
     const GLfloat kColors[] = {
-        1.0f, 1.0f, 0.0f, 1.0f,
-        1.0f, 1.0f, 0.0f, 1.0f,
-        1.0f, 1.0f, 0.0f, 1.0f,
-        1.0f, 1.0f, 0.0f, 1.0f,
-        1.0f, 1.0f, 0.0f, 1.0f,
-        1.0f, 1.0f, 0.0f, 1.0f,
-        1.0f, 1.0f, 0.0f, 1.0f,
-        1.0f, 1.0f, 0.0f, 1.0f,
-        1.0f, 1.0f, 0.0f, 1.0f,
-        1.0f, 1.0f, 0.0f, 1.0f,
-        1.0f, 1.0f, 0.0f, 1.0f
+        0.0f, 1.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f
     };
 
 
@@ -51,7 +51,7 @@ void StarContour::Initialize(){
     glBindVertexArray(0);
 }
 
-StarContour::~StarContour(){
+StarFrame::~StarFrame(){
     glDisableVertexAttribArray(1);
     glDisableVertexAttribArray(0);
 
@@ -64,7 +64,7 @@ StarContour::~StarContour(){
     glDeleteVertexArrays(1, &vao_);
 }
 
-void StarContour::Draw(const Program &program){
+void StarFrame::Draw(const Program &program){
 
     glUseProgram(program);
     glBindVertexArray(vao_);

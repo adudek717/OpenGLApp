@@ -7,9 +7,9 @@
 
 #include "triangle.h"
 #include "star.h"
-#include "starContour.h"
+#include "starFrame.h"
 #include "circle.h"
-#include "circleContour.h"
+#include "circleFrame.h"
 #include "program.h"
 
 class Window{
@@ -28,9 +28,9 @@ class Window{
 
     Triangle triangle_;
     Star star_;
-    StarContour starContour_;
+    StarFrame starFrame_;
     Circle circle_;
-    CircleContour circleContour_;
+    CircleFrame circleFrame_;
 
     int mode_;
 

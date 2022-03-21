@@ -83,9 +83,9 @@ void Window::InitGlewOrDie(){
 void Window::InitModels(){
     triangle_.Initialize();
     star_.Initialize();
-    starContour_.Initialize();
+    starFrame_.Initialize();
     circle_.Initialize();
-    circleContour_.Initialize();
+    circleFrame_.Initialize();
 }
 
 void Window::InitPrograms(){
@@ -119,9 +119,9 @@ void Window::Run(void){
 
         if (mode_ == 0) triangle_.Draw(program_);
         else if (mode_ == 1) star_.Draw(program_);
-        else if (mode_ == 2) starContour_.Draw(program_);
+        else if (mode_ == 2) starFrame_.Draw(program_);
         else if (mode_ == 3) circle_.Draw(program_);
-        else if (mode_ == 4) circleContour_.Draw(program_);
+        else if (mode_ == 4) circleFrame_.Draw(program_);
 
         glfwSwapBuffers(window_);
         glfwWaitEvents();
